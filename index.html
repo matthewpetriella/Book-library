@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <title>Couch Critic</title>
+
+</head>
+
+<body>
+
+<!-- hero -->  
+    <section class="hero is-fullhd">
+        <div class="hero-body">
+            <h1 class="title has-text-white has-text-left has-text-weight-bold">Couch Critic</h1>
+            <h2 class="subtitle has-text-white has-text-left">Searching and streaming simplified!</h2>
+        </div>
+    </section>
+
+<!-- search form -->
+    <section class="section is-fullhd">
+        <div class="field">
+            <label class="label">Search by title:</label>
+            <div class="control">
+                <form id="user-form">
+                    <input class="input is-rounded is-autofocus" id="title" type="text" placeholder="Titanic">
+                    <button class= "button is-light" id="search">Search</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+<!-- display search results -->
+    <section class="section is-fullhd" id="display-data">
+
+    </section>
+
+<!-- footer -->
+    <section class="footer is-fullhd">
+        &copy; 2022
+    </section>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./assets/javascript/script.js"></script>
+  
+</html>
