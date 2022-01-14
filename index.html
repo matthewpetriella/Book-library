@@ -28,15 +28,24 @@
 
 <!-- search form -->
     <section class="section is-fullhd">
-        <div class="field">
-            <label class="label">Search by title:</label>
-            <div class="control">
-                <form id="user-form">
-                    <input class="input is-rounded is-autofocus" id="title" type="text" placeholder="Titanic">
-                    <button class= "button is-light" id="search">Search</button>
-                </form>
-            </div>
-        </div>
+        <button class="js-modal-trigger" id="modal2" data-target="modal-js-example">
+            Open JS example modal
+          </button>
+          
+        <div class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <label class=" has-text-white" for="modal-search"> Search by Author: </label>
+                    <input class="input is-rounded is-autofocus" id="title" type="text" placeholder="J.K Rowling ">
+                    <button class= "button is-light book-search" id="search"> Search </button>
+                    <button class= "button is-light cancel-search" id="search"> Cancel X</button>
+         
+            
+
+              </p>
+            <!-- </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+          </div> -->
     </section>
 
 <!-- display search results -->
