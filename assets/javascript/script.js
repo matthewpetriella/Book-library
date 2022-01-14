@@ -10,6 +10,10 @@ var bookBtn = document.querySelector(".book-search")
 // get modal cancel button
 var cancelBtn = document.querySelector(".cancel-search")
 
+//variables to store api keys
+var bookAPI= "D9OwWTZWlrbbFIzrqzKyzY9zxhC4MVua"
+var tubeAPI= "AIzaSyBSpft2lGGm4UmvupTZwpBsVuamB3inYA0"
+
 // When the user clicks the button, open the modal
 openBtn.addEventListener('click', function(){
    modal.style.display = "block"
