@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css" />
 
-  <title>Couch Critic</title>
+  <title>book Critic</title>
 
 </head>
 
@@ -21,33 +21,58 @@
 <!-- hero -->  
     <section class="hero is-fullhd">
         <div class="hero-body">
-            <h1 class="title has-text-white has-text-left has-text-weight-bold">Couch Critic</h1>
-            <h2 class="subtitle has-text-white has-text-left">Searching and streaming simplified!</h2>
+            <h1 class="title has-text-white has-text-left has-text-weight-bold">Book Critic</h1>
+            <h2 class="subtitle has-text-red has-text-left">Searching and streaming simplified!</h2>
         </div>
     </section>
 
     <!-- Modal -->
 <section class="section">
     <div class="modal is-active">
-        <div class="modal-background"></div>
-        <div class="modal-content">Welcome to Book Critic, a site in development!</div>
-        <p> NY Best seller List</p>
-
-        <button class=" cancel-search modal-close is-large" aria-label="close"> Close</button>
+        <div class="modal-background has-background-black"></div>
+        <div class="modal-content">
+            <h2 class=" has-text-white">Welcome to Book Critic, a site in development!</h2>
+            <p class=" has-text-white"> Have you ever heard an established or new author say that their book is a New York Times Best Seller? Have you ever thought, "How do I choose which best seller I want to read this week"?
+                 What if there was an applicaiton that allowed you to find the current weeks best Fiction and Non-Fictional sellers and allows you to get get a review from real people!
+                <p class="has-text-info"> Well, Book Critic makes this possible. Book Critic will give you a list of This weeks Fictional and Non-Fictional best sellers, and connects you youtube reviews.
+            </p>
+            <br>
+            </p>
+            <section class="section is-fullhd">
+                <button id="nysearch">
+                    Ficton 
+                  </button>
+        
+                  <button id="nySearchNfictional">
+                  Non-Ficton
+                  </button>
+           </section>
+        </div>
+ 
     </div>
 </section>
 
-<!-- search form -->
+<!-- search form 
     <section class="section is-fullhd">
-        <button class="nysearch">
-            Ficton or Non-ficton
+        <button id="nysearch">
+            Ficton 
+          </button>
+
+          <button id="nySearchNfictional">
+          Non-Ficton
           </button>
    </section>
-
+-->
 <!-- display search results -->
 <section class="section">
     <div class="is-half bestsellers" id="displaybestsellers">
-        <ul></ul>
+        <ul class="booklist" id="fiction-list"></ul>
+    </div>
+</section>
+
+<section>
+    <div class="is-half bestsellers" id="displaybestsellers">
+        <ul class="booklist" id="nonfictional-list"></ul>
     </div>
 </section>
 
