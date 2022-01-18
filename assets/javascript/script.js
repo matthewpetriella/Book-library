@@ -96,8 +96,36 @@ function getApi2() {
   
 };
 
+//Api call to display youtube video
+function getVideo() {
+  $.ajax({
+    type: 'GET',
+    url: 'https://www.googleapis.com/youtube/v3/search',
+    data: {
+        key: 'AIzaSyCnm1Vk0t1Po9Fanm2-OIFvOP4HzN4SUCM',
+        //this "q" is where we need to search our li <title> + "book review"
+        q: "book review",
+        part: 'snippet',
+        maxResults: 1,
+        type: 'video',
+        videoEmbeddable: true,
+    },
+    success: function(data){
+        embedVideo(data)
+    },
+    error: function(response){
+        console.log("Request Failed");
+    }
+  });
+}
+//replaces placeholder video with updated title and description
+function embedVideo(data) {
+  $('iframe').attr('src', 'https://www.youtube.com/embed/' + data.items[0].id.videoId)
+  $('h3').text(data.items[0].snippet.title)
+  $('.description').text(data.items[0].snippet.description)
+}
 
-
+getVideo();
 
 // function youtubeAPI() {
 //   modal.style.display = "none"
