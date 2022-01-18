@@ -97,6 +97,7 @@ function getApi2() {
 };
 
 //Api call to display youtube video
+//source: https://dev.to/aveb/making-your-first-get-request-to-youtube-search-api-4c2f
 function getVideo() {
   $.ajax({
     type: 'GET',
