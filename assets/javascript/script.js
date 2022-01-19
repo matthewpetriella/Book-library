@@ -50,14 +50,14 @@ function getApi() {
   .then(function(data) {
     console.log (data)
     for (var i = 0; i < 5; i++) {
-     var author = document.createElement('h2');
-      author.textContent = data.results.lists[0].books[i].author + ":  ";
+     var author = document.createElement('a');
+      author.textContent = data.results.lists[0].books[i].author + ":  " + data.results.lists[0].books[i].title;
+      author.setAttribute("position", i.toString());
+      author.setAttribute("id", "book-Element_" + i);
       fictionalList.appendChild(author); 
         
-      var listItem = document.createElement('a');
-      listItem.textContent = data.results.lists[0].books[i].title;
-      author.appendChild(listItem);
-      listItem.classList.add("button-"+ [i]);
+      var booklist = document.querySelectorAll(".booklist > a");
+    getResult(booklist);
     }
     
   });
@@ -82,7 +82,7 @@ function getApi2() {
       nauthor.setAttribute("position", i.toString());
       nauthor.setAttribute("id", "book-Element_" + i);
       nFictionalList.appendChild(nauthor); 
-      
+
        
     }
     var booklist = document.querySelectorAll(".booklist > a");
@@ -97,7 +97,6 @@ function getApi2() {
 //source: https://dev.to/aveb/making-your-first-get-request-to-youtube-search-api-4c2f
 function getVideo(event) {
   var searchResult = document.getElementById(event.target.id);
-debugger;
   document.getElementById("video-box").classList.remove("hidevideo-box");  
 
   $.ajax({
