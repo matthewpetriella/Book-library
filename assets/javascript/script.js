@@ -20,29 +20,23 @@ var nFictionalList = document.querySelector("#nonfictional-list");
 
 
 
+ var buttonZero = document.querySelector(".button-0");
+
 // API Key
 var bookAPI= "D9OwWTZWlrbbFIzrqzKyzY9zxhC4MVua";
 var youtubeAPIKey = "AIzaSyCnm1Vk0t1Po9Fanm2-OIFvOP4HzN4SUCM";
 
+function getResult(booklist) {
+  
+
+  for (var i=0; i < booklist.length; i++){
+    booklist[i].addEventListener("click", getVideo);
+  }
+
+}
 
 
 
-
-//When the user clicks the cancel button, close the modal
-// cancelBtn.addEventListener('click', function (){
-// modal.style.display = "none"
-
-// });
-
-
-// bookBtn.addEventListener('click', function(event,userSearch){
-//     event.preventDefault();
-
-// var userSearch = $(`#title`).val();   
-
-//     localStorage.setItem("book", userSearch);
-    
-// }); 
 
 
 function getApi() {
@@ -67,6 +61,8 @@ function getApi() {
     }
     
   });
+
+
 };
 
 
@@ -81,40 +77,62 @@ function getApi2() {
   .then(function(data) {
     console.log (data)
     for (var i = 0; i < 5; i++) {
-     var nauthor = document.createElement('h2');
-      nauthor.textContent = data.results.lists[1].books[i].author + ":  ";
+     var nauthor = document.createElement('a');
+      nauthor.textContent = data.results.lists[1].books[i].author + ": " + data.results.lists[1].books[i].title;
+      nauthor.setAttribute("position", i.toString());
+      nauthor.setAttribute("id", "book-Element_" + i);
       nFictionalList.appendChild(nauthor); 
-        
-      var nlistItem = document.createElement('a');
-      nlistItem.textContent = data.results.lists[1].books[i].title;
-      nauthor.appendChild(nlistItem);
-      nlistItem.classList.add("button-"+ [i]);
-
+      
+       
     }
- 
+    var booklist = document.querySelectorAll(".booklist > a");
+    getResult(booklist);
   });
+  
   
 };
 
 
+//Api call to display youtube video
+//source: https://dev.to/aveb/making-your-first-get-request-to-youtube-search-api-4c2f
+function getVideo(event) {
+  var searchResult = document.getElementById(event.target.id);
+debugger;
+  document.getElementById("video-box").classList.remove("hidevideo-box");  
+
+  $.ajax({
+    type: `GET`,
+    url: `https://www.googleapis.com/youtube/v3/search`,
+    data: {
+        key: `AIzaSyCnm1Vk0t1Po9Fanm2-OIFvOP4HzN4SUCM`,
+        //this “q” is where we need to search our li <title> + “book review”
+        q: searchResult.text + " review",
+        part: `snippet`,
+        maxResults: 1,
+        type: `video`,
+        videoEmbeddable: true,
+    },
+    success: function(data){
+        embedVideo(data)
+    },
+    error: function(response){
+        console.log("Request Failed");
+    }
+  });
+  
+}
+//replaces placeholder video with updated title and description
+function embedVideo(data) {
+  $(`iframe`).attr(`src`, `https://www.youtube.com/embed/` + data.items[0].id.videoId)
+  $(`h3`).text(data.items[0].snippet.title)
+  $(`.description`).text(data.items[0].snippet.description)
+}
 
 
-// function youtubeAPI() {
-//   modal.style.display = "none"
-//   var requestUrl = "https://youtube.googleapis.com/youtube/v3/search?part=snippet&topicId=IT%20ENDS%20WITH%20US&type=video&maxResults=5&key=" + youtubeAPIKey;
-//   fetch(requestUrl)
-//   .then(function(response) {
-//     console.log (response)
-//     return response.json();
-//   })
-//   .then(function(data) {
-//     console.log (data)
-//     for (var i = 0; i < 5; i++) {
-     
-//     }
-//   });
-// };
-
+// buttonZero.addEventListener("click", function(){
+//   var button0Val = buttonZero.val();
+//   console.log(button0Val);
+// });
 
 
 var search = {};
@@ -124,3 +142,4 @@ openBtn.addEventListener('click', getApi);
 
 // 
 nonFictinoalBtn.addEventListener('click', getApi2);
+
