@@ -18,7 +18,7 @@ var fictionalList = document.querySelector("#fiction-list");
 
 var nFictionalList = document.querySelector("#nonfictional-list");
 
-
+var changeGenreBtn = document.getElementById("genre-trigger");
 
  var buttonZero = document.querySelector(".button-0");
 
@@ -33,10 +33,12 @@ function getResult(booklist) {
     booklist[i].addEventListener("click", getVideo);
   }
 
-}
+};
 
 
-
+changeGenreBtn.addEventListener("click", function(){
+  reload = location.reload();
+});
 
 
 function getApi() {
@@ -54,6 +56,8 @@ function getApi() {
       author.textContent = data.results.lists[0].books[i].author + ":  " + data.results.lists[0].books[i].title;
       author.setAttribute("position", i.toString());
       author.setAttribute("id", "book-Element_" + i);
+      author.classList.add("searchBtn");
+      author.classList.add("p-2");
       fictionalList.appendChild(author); 
         
       var booklist = document.querySelectorAll(".booklist > a");
@@ -81,6 +85,7 @@ function getApi2() {
       nauthor.textContent = data.results.lists[1].books[i].author + ": " + data.results.lists[1].books[i].title;
       nauthor.setAttribute("position", i.toString());
       nauthor.setAttribute("id", "book-Element_" + i);
+      nauthor.classList.add("p-2");
       nFictionalList.appendChild(nauthor); 
 
        
@@ -127,11 +132,6 @@ function embedVideo(data) {
   $(`.description`).text(data.items[0].snippet.description)
 }
 
-
-// buttonZero.addEventListener("click", function(){
-//   var button0Val = buttonZero.val();
-//   console.log(button0Val);
-// });
 
 
 var search = {};
