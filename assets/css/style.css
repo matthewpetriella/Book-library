@@ -51,6 +51,11 @@
     background-color: rgb(2, 104, 2);
 }
 
+.list-header {
+    font-size: 32px;
+    text-align: center;
+}
+
 #video-box {
     margin: auto;
     width: 50%;
