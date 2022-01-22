@@ -41,6 +41,7 @@
 }
 
 #genre-trigger {
+    offset: 50%;
     border-radius: .5em;
     background-color: rgb(6, 173, 6);
     color: white;
@@ -48,6 +49,18 @@
 
 #genre-trigger:hover {
     background-color: rgb(2, 104, 2);
+}
+
+#video-box {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.p-2 {
+    display: list-item;
+    font-size: 18px;
+    text-align: center;
 }
 
 body, h1, h2, h3, h4, h5, h6, p {
@@ -69,4 +82,9 @@ body, h1, h2, h3, h4, h5, h6, p {
 
 .hidevideo-box {
     display: none;
+}
+
+footer {
+    padding: 0;
+    margin: 0;
 }
