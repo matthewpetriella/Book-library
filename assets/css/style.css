@@ -26,10 +26,6 @@
     background-color: rgb(2, 104, 2);
 }
 
-#video-box {
-    
-}
-
 #nySearchNfictional {
     border-radius: .5em;
     display: inline-block;
@@ -41,6 +37,16 @@
 }
 
 #nySearchNfictional:hover {
+    background-color: rgb(2, 104, 2);
+}
+
+#genre-trigger {
+    border-radius: .5em;
+    background-color: rgb(6, 173, 6);
+    color: white;
+}
+
+#genre-trigger:hover {
     background-color: rgb(2, 104, 2);
 }
 
