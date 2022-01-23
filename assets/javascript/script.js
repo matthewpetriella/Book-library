@@ -162,27 +162,34 @@ console.log(getGenre);
 var srcBtn = document.createElement('button');
 var blankHTML = "";
 
-
 if(getGenre !== null) {
-for (let i = 1; i < getGenre.length; i++) {
-  var ibTN = srcBtn[i]
-  console.log(getGenre[i])
-srcBtn.textContent = (getGenre)[i]
 
+for (let i = 0; i < getGenre.length; i++) {
+var previousEl = document.getElementById("previous-search");
+var getGenre = JSON.parse(localStorage.getItem("Genre"))
+var srcBtn = document.createElement('button');
+
+srcBtn.textContent = getGenre[i];
  srcBtn.classList.add("p-2")
+ srcBtn.classList.add("searchBtns")
  previousEl.appendChild(srcBtn);
+
+ 
 }
+
+$("#previous-search").on("click", ".searchBtns",function(){
+  var genre = $(this).text()
+  $("#current").addClass("border border-warning")
+  // add the button txt value to search bar
+  $("#genreSearch").val(genre)
+  // running the txt through the get location function
+})
 
 
 }
 
 };
 
-previousEl.addEventListener("click", function(){
-  var genre = this.textContent
-  console.log(genre);
-  genreSearch.value = genre;
-})
 
 // // When the user clicks the button, open the modal
 openBtn.addEventListener('click', function () {
