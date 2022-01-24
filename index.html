@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css" />
 
-  <title>book Critic</title>
+  <title>Book Critic</title>
 
 </head>
 
@@ -21,44 +21,38 @@
 <!-- hero -->  
     <section class="hero is-fullhd">
         <div class="hero-body">
-            <h1 class="title has-text-black has-text-left has-text-weight-bold">Book Critic</h1>
-            
+            <h1 class="title has-text-black has-text-left has-text-weight-bold" id="titleText">Book Critic</h1>
+            <div>
+                <button class="button" id="genre-trigger"> Change Genre</button>
+            </div>
         </div>
+        <!-- Modal -->
+        <section class="section" id="modal">
+            <div class="modal is-active">
+                <div class="modal-background has-background-black"></div>
+                <div class="modal-content">
+                    <h2 class=" has-text-white">Welcome to Book Critic, a site in development!</h2>
+                    <p class=" has-text-white"> Have you ever heard an established or new author say that their book is a New York Times Best Seller? Have you ever thought, "How do I choose which best seller I want to read this week"? What if there was an application that allowed you to find the current weeks best Fiction and Non-Fictional sellers and allows you to get a review from real people!</p>
+                    <br>
+                    <p class="has-text-white"> Well, Book Critic makes this possible. Book Critic will give you a list of This weeks Fictional and Non-Fictional best sellers, and connects you to youtube reviews.</p>
+                    <section class="section is-fullhd">
+                        <button id="nysearch">
+                            Fiction 
+                          </button>
+                
+                          <button id="nySearchNfictional">
+                          Non-Fiction
+                          </button>
+                   </section>
+                </div>
+            </div>
+        </section>
     </section>
-
-    <!-- Modal -->
-<section class="section">
-    <div class="modal is-active">
-        <div class="modal-background has-background-black"></div>
-        <div class="modal-content">
-            <h2 class=" has-text-white">Welcome to Book Critic, a site in development!</h2>
-            <p class=" has-text-white"> Have you ever heard an established or new author say that their book is a New York Times Best Seller? Have you ever thought, "How do I choose which best seller I want to read this week"?
-                 What if there was an application that allowed you to find the current weeks best Fiction and Non-Fictional sellers and allows you to get a review from real people!
-                <p class="has-text-info"> Well, Book Critic makes this possible. Book Critic will give you a list of This weeks Fictional and Non-Fictional best sellers, and connects you to youtube reviews.
-            </p>
-            <br>
-            </p>
-            <section class="section is-fullhd">
-                <button id="nysearch">
-                    Fiction 
-                  </button>
-        
-                  <button id="nySearchNfictional">
-                  Non-Fiction
-                  </button>
-           </section>
-        </div>
- 
-    </div>
-</section>
-
-<div>
-    <button class="button" id="genre-trigger"> Change Genre</button>
-</div>
 
 <!-- display search results -->
 <section class="section">
     <div class="is-half bestsellers" id="displaybestsellers">
+        <h1 class="list-header">This Week's Top 5:</h1>
         <ul class="booklist" id="fiction-list"></ul>
     </div>
 </section>
@@ -71,7 +65,7 @@
 
 <!--placeholder for book review - need to hide onLoad and show on title click-->
 <div class="container hidevideo-box" id="video-box">
-    <iframe src=“”></iframe>
+    <iframe src=“” height="400" width="600"></iframe>
     <h3>Video Title</h3>
     <p class=“description”>Video Description<p>
 </div>
