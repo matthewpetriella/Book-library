@@ -1,73 +1,5 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 
-#modal {
-    position: fixed;
-    z-index: 1;
-    max-width: 100%;
-    max-height: 100%;
-
-}
-
-.modal-content h2 {
-    font-size: 36px;
-}
-
-#nysearch {
-    border-radius: .5em;
-    display: inline-block;
-    box-sizing: border-box;
-    text-decoration: none;
-    color: white;
-    background-color: rgb(6, 173, 6);
-    text-align: center;
-}
-
-#nysearch:hover {
-    background-color: rgb(2, 104, 2);
-}
-
-#nySearchNfictional {
-    border-radius: .5em;
-    display: inline-block;
-    box-sizing: border-box;
-    text-decoration: none;
-    color: white;
-    background-color: rgb(6, 173, 6);
-    text-align: center;
-}
-
-#nySearchNfictional:hover {
-    background-color: rgb(2, 104, 2);
-}
-
-#genre-trigger {
-    offset: 50%;
-    border-radius: .5em;
-    background-color: rgb(6, 173, 6);
-    color: white;
-}
-
-#genre-trigger:hover {
-    background-color: rgb(2, 104, 2);
-}
-
-.list-header {
-    font-size: 32px;
-    text-align: center;
-}
-
-#video-box {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-}
-
-.p-2 {
-    display: list-item;
-    font-size: 18px;
-    text-align: center;
-}
-
 body, h1, h2, h3, h4, h5, h6, p {
     font-family: 'Oswald', sans-serif;
 }
@@ -78,9 +10,7 @@ body, h1, h2, h3, h4, h5, h6, p {
     background-size: cover;
     background-repeat: no-repeat;
 }
- #titleText {
-    font-size: 60px;
- }
+
 .hero-body {
     margin: 6%;
 }
@@ -89,7 +19,6 @@ body, h1, h2, h3, h4, h5, h6, p {
     display: none;
 }
 
-footer {
-    padding: 0;
-    margin: 0;
+.clicked {
+    color: blueviolet;
 }
